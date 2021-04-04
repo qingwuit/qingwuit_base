@@ -1,31 +1,38 @@
 <template>
-    <div class="login_bg">
+    <div class="login_bg seller_login">
         <div class="login_bg3">
             <div class="login_bg2">
                 <div class="login_hg_left">
-                    <img :src="require('@/asset/login/login_bg.png')" >
+                    <!-- <img :src="require('@/asset/login/login_bg.png')" > -->
                 </div>
                 <div class="login_black_hg">
+                    <div class="seller_logo">
+                        <img :src="require('@/asset/login/login_logo.png')" alt="">
+                    </div>
                     <div class="head_log">
                         后台管理系统
                         <p>ELECTRICITY SYSTEM</p>
                     </div>
                     <div class="unline" style="margin-bottom:30px;"></div>
                     <div class="form-group">
-                        <a-input v-model="username" @keyup.enter="login"></a-input>
+                        <a-input v-model="username" @keyup.enter="login"  placeholder="账号" size="large"><a-icon style="font-size:16px;" slot="prefix" type="user"  /></a-input>
                     </div>
-                    <div class="form-group">
-                        <a-input v-model="password" type="password" @keyup.enter="login"></a-input>
+                    <div class="form-group"  >
+                        <a-input-password v-model="password" type="password" @keyup.enter="login"  placeholder="密码" size="large"><a-icon style="font-size:16px;" slot="prefix" type="lock" /></a-input-password>
                     </div>
-                    <div class="form-group" style="font-size:12px;">
+               
+                    <!-- <div class="form-group" style="font-size:12px;">
                         <a-checkbox name="isCheck" v-model="isCheck" label="1">
                             <font style="font-size:12px;">我已同意</font>
                         </a-checkbox>
                         <a class="must_rad" href="#">《系统用户使用协议》</a>（必读）
-                    </div>
+                    </div> -->
+                    
                     <div class="form-group">
-                        <a-button type="primary" block  @click="login">登 陆</a-button>
+                        <a-button type="primary" block  @click="login" size="large">登 陆</a-button>
                     </div>
+
+                  
                    
                 </div>
                 <div class="clear"></div>
@@ -91,12 +98,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.seller_logo{
+    width: 108px;
+    height: 108px;
+    margin:0 auto;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    background: #eee;
+}
 .login_bg {
     background-position: center;
     background-size: 100%;
     height: 100%;
     background-color: #f1f1f1;
-    background-image: linear-gradient(to right, #5d80fe , #56c9ff);
+    /* background-image: linear-gradient(to right, #5d80fe , #56c9ff); */
 }
 .head_log{
     text-align: center;
@@ -117,11 +132,14 @@ export default {
     /* margin-top: -250px; */
     display: block;
 }
+
+
 .login_bg3{
     height: 100%;
-    background: url('../../asset/login/bg.png');
+    background: url('../../asset/login/back.png');
     background-position: top right;
     background-repeat: no-repeat;
+    
 }
 .login_bg2:after{
     display: block;
@@ -130,17 +148,19 @@ export default {
 }
 .login_black_hg {
     background: #fff;
-    width: 360px;
+    width: 500px;
     border-radius: 6px;
     padding: 0px 40px 20px 40px;
     box-sizing: border-box;
     -moz-box-sizing: border-box; /* Firefox */
     -webkit-box-sizing: border-box; /* Safari */
     padding-top: 40px;
-    float: left;
+    /* float: left; */
     position: absolute;
-    right: 30px;
-    top:-180px;
+    left: 50%;
+    /* right: 30px; */
+    margin-left: -200px;
+    top:-480px;
 }
 .login_hg_left{
     float: left;
@@ -164,5 +184,13 @@ export default {
 .must_rad {
     font-size: 12px;
 }
+
+@media screen and  (max-width:960px){
+.login_bg2{
+    width: 100%;
+}
+.login_hg_left{display: none;}
+.login_black_hg{right:auto;left:50%;margin-left: -180px;width: 360px;top:-280px;}
+} 
 </style>
 

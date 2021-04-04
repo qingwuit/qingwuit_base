@@ -159,7 +159,7 @@ export default {
             this.$get(this.$api.adminLogout).then(res=>{
                 this.$message.success(res.msg);
                 localStorage.removeItem('admin_token');
-                this.$router.push('/Admin/login');
+                this.$router.push({name:'admin_login'});
             })
         },
 
