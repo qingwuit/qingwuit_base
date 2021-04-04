@@ -1,7 +1,7 @@
 {
-    "name": "qingwuit/qwshop",
+    "name": "qingwuit/qingwuit_base",
     "type": "project",
-    "description": "laravel+vue for b2b2c.",
+    "description": "qingwuit_base.",
     "keywords": [
         "framework",
         "laravel"
